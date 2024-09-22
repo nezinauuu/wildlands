@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0ff2k7vje253"]
+[gd_scene load_steps=12 format=3 uid="uid://d0ff2k7vje253"]
 
 [ext_resource type="PackedScene" uid="uid://oynhajdrykej" path="res://scene/player.tscn" id="1_x5flq"]
 [ext_resource type="Texture2D" uid="uid://cn1eunxy8ni8u" path="res://art/environment/survivalgame-terrian-defult.png" id="2_nymi0"]
 [ext_resource type="Texture2D" uid="uid://tjnsnll7lfj0" path="res://art/environment/survivalgame-terrian-cliffs.png" id="3_0ebbf"]
 [ext_resource type="Texture2D" uid="uid://dt662dc2ohmig" path="res://art/environment/survivalgame-trees.png" id="4_l2ehc"]
 [ext_resource type="Texture2D" uid="uid://cuwvcknji3jfh" path="res://art/environment/survivalgame-terrian-water.png" id="5_46803"]
+[ext_resource type="PackedScene" uid="uid://dj3wt2tr5j0as" path="res://scene/apple_tree.tscn" id="6_g6w8l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wjc73"]
 texture = ExtResource("2_nymi0")
@@ -271,3 +272,8 @@ layer_1/z_index = -1
 layer_1/tile_data = PackedInt32Array(-65539, 786433, 2, -65538, 786433, 2, -65537, 851969, 2, -65540, 720897, 2, -131075, 786433, 1, -131074, 786433, 1, -131073, 851969, 1, -131076, 720897, 1, 393209, 196610, 0, 393210, 262146, 0, 393211, 262146, 0, 393212, 262146, 0, 393213, 262146, 0, 393214, 327682, 0, 458745, 196610, 1, 458746, 262146, 1, 458747, 262146, 1, 458748, 262146, 1, 458749, 262146, 1, 458750, 327682, 1, 524281, 196610, 1, 524282, 262146, 1, 524283, 262146, 1, 524284, 262146, 1, 524285, 262146, 1, 524286, 327682, 1, 393216, 196610, 0, 327682, 196610, 1, 393217, 262146, 0, 262146, 196610, 0, 262147, 262146, 0, 262148, 262146, 0, 262149, 262146, 0, 262150, 327682, 0, 327686, 327682, 1, 393222, 327682, 1, 458758, 327682, 1, 458752, 196610, 1, 458753, 262146, 1, 393218, 393218, 0, 327683, 262146, 1, 327684, 262146, 1, 327685, 262146, 1, 393221, 262146, 1, 393220, 262146, 1, 393219, 262146, 1, 458757, 262146, 1, 458756, 262146, 1, 458755, 262146, 1, 458754, 262146, 1, 262142, 524290, 0, 131066, 1114114, 2, 327675, 1114114, 0, 196606, 524290, 1)
 layer_2/name = "3"
 layer_2/tile_data = PackedInt32Array(-131075, 524290, 1, -131074, 524290, 2, -65534, 524290, 2, 65533, 524290, 0, 131074, 524290, 0)
+
+[node name="apple_tree" parent="." instance=ExtResource("6_g6w8l")]
+position = Vector2(145, 21)
+
+[node name="apple_tree2" parent="." instance=ExtResource("6_g6w8l")]
