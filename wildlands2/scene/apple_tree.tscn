@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dj3wt2tr5j0as"]
+[gd_scene load_steps=9 format=3 uid="uid://dj3wt2tr5j0as"]
 
 [ext_resource type="Script" path="res://script/apple_tree.gd" id="1_7d338"]
 [ext_resource type="Resource" uid="uid://y0m6iliakbv3" path="res://inventory/items/apple.tres" id="2_ir6bi"]
@@ -34,6 +34,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_tp7ae"]
 radius = 35.1283
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6dpeb"]
+radius = 7.0
+
 [node name="apple_tree" type="Node2D"]
 script = ExtResource("1_7d338")
 item = ExtResource("2_ir6bi")
@@ -52,6 +55,12 @@ wait_time = 3.0
 one_shot = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="collision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collision"]
+position = Vector2(0, 9)
+shape = SubResource("CircleShape2D_6dpeb")
 
 [connection signal="body_entered" from="pickable_area" to="." method="_on_pickable_area_body_entered"]
 [connection signal="body_exited" from="pickable_area" to="." method="_on_pickable_area_body_exited"]
