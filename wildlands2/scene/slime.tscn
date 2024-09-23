@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://dqhy5bqcev7pk"]
 
-[ext_resource type="Script" path="res://slime.gd" id="1_qfy63"]
+[ext_resource type="Script" path="res://script/slime.gd" id="1_c6fux"]
 [ext_resource type="Resource" uid="uid://drnbgsxuc8iul" path="res://inventory/items/slime.tres" id="2_e7tew"]
 [ext_resource type="Texture2D" uid="uid://45dmpfa3ubmc" path="res://art/character/survivalgame-enemy-slime.png" id="2_yok1f"]
 [ext_resource type="PackedScene" uid="uid://cdgsyio5gocg2" path="res://scene/slime_collectable.tscn" id="3_18hmp"]
@@ -162,7 +162,7 @@ radius = 85.0
 radius = 2189.06
 
 [node name="slime" type="CharacterBody2D"]
-script = ExtResource("1_qfy63")
+script = ExtResource("1_c6fux")
 itemRes = ExtResource("2_e7tew")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
