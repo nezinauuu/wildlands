@@ -1,0 +1,121 @@
+[gd_scene load_steps=15 format=3 uid="uid://dgtiggpk65j5s"]
+
+[ext_resource type="Texture2D" uid="uid://bn2q2vj73ac3l" path="res://art/original/Capybara.png" id="1_34l5r"]
+[ext_resource type="Script" path="res://script/capybara.gd" id="1_dgwjb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7h7g"]
+atlas = ExtResource("1_34l5r")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bs5ak"]
+atlas = ExtResource("1_34l5r")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mw32"]
+atlas = ExtResource("1_34l5r")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkc5d"]
+atlas = ExtResource("1_34l5r")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xa8p0"]
+atlas = ExtResource("1_34l5r")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i28ac"]
+atlas = ExtResource("1_34l5r")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iscdh"]
+atlas = ExtResource("1_34l5r")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fm0fr"]
+atlas = ExtResource("1_34l5r")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksi3c"]
+atlas = ExtResource("1_34l5r")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tesim"]
+atlas = ExtResource("1_34l5r")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wb0sv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7h7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bs5ak")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mw32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkc5d")
+}],
+"loop": true,
+"name": &"walk-DOWN",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xa8p0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i28ac")
+}],
+"loop": true,
+"name": &"walk-L",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iscdh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fm0fr")
+}],
+"loop": true,
+"name": &"walk-R",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksi3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tesim")
+}],
+"loop": true,
+"name": &"walk-UP",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pfn0c"]
+radius = 5.09902
+
+[node name="capybara" type="CharacterBody2D"]
+script = ExtResource("1_dgwjb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wb0sv")
+animation = &"walk-L"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_pfn0c")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

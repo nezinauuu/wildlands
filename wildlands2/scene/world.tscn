@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0ff2k7vje253"]
+[gd_scene load_steps=17 format=3 uid="uid://d0ff2k7vje253"]
 
 [ext_resource type="PackedScene" uid="uid://oynhajdrykej" path="res://scene/player.tscn" id="1_x5flq"]
 [ext_resource type="Texture2D" uid="uid://cn1eunxy8ni8u" path="res://art/environment/survivalgame-terrian-defult.png" id="2_nymi0"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dqhy5bqcev7pk" path="res://scene/slime.tscn" id="8_eyte0"]
 [ext_resource type="PackedScene" uid="uid://cn2yvifat1n1c" path="res://scene/world_2.tscn" id="9_vgfmy"]
 [ext_resource type="PackedScene" uid="uid://bni28e3xb204y" path="res://scene/npc.tscn" id="10_04e1m"]
+[ext_resource type="PackedScene" uid="uid://dgtiggpk65j5s" path="res://scene/capybara.tscn" id="11_rivp3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xjcka"]
 texture = ExtResource("2_nymi0")
@@ -335,5 +336,8 @@ position = Vector2(-62, 50)
 
 [node name="stick_collectable3" parent="." instance=ExtResource("7_dnwdb")]
 position = Vector2(56, 36)
+
+[node name="capybara" parent="." instance=ExtResource("11_rivp3")]
+position = Vector2(56, 7)
 
 [connection signal="stick_collected" from="player" to="npc" method="_on_player_stick_collected"]
